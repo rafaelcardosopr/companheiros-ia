@@ -61,6 +61,7 @@ export const characters = pgTable(
     tagline: text("tagline").notNull().default(""),
     bio: text("bio").notNull().default(""),
     appearance: text("appearance").notNull().default(""),
+    archetype: text("archetype").notNull().default(""),
     personality: text("personality").notNull().default(""),
     backstory: text("backstory").notNull().default(""),
     occupation: text("occupation").notNull().default(""),

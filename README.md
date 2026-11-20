@@ -12,6 +12,13 @@ Plataforma de companheiros de IA para maiores de 18 anos (nome provisório). Pla
 - Banco PostgreSQL com pgvector e todas as tabelas do MVP (usuários, personagens, conversas, mensagens, memória, personas, denúncias)
 - App instalável no celular (PWA)
 
+## Etapa 2
+
+- Catálogo com busca e filtro por tags, separando o elenco oficial dos personagens do usuário
+- Elenco inicial de 6 personagens originais e adultos (`src/db/seed-data.ts`)
+- Criador e edição de personagem: nome, idade, aparência, personalidade (12 arquétipos), relação, profissão, hobbies, história, jeito de falar, primeira mensagem e tags
+- Validação: idade mínima de 18 anos e bloqueio de referências a menores e de nomes de pessoas reais (`src/lib/characters/blocklist.ts`)
+
 ## Rodar no Windows, tudo no disco F:
 
 Precisa de: [Node.js 22 ou 24](https://nodejs.org), [Git](https://git-scm.com) e
@@ -34,6 +41,7 @@ Precisa de: [Node.js 22 ou 24](https://nodejs.org), [Git](https://git-scm.com) e
    ```powershell
    npm run db:up
    npm run db:migrate
+   npm run db:seed
    ```
 5. **Rodar o app:**
    ```powershell
@@ -55,6 +63,7 @@ Para parar o banco: `docker compose stop`. Os dados ficam guardados para a próx
 | `npm run db:up` | Sobe o Postgres no Docker |
 | `npm run db:generate` | Gera migração depois de mudar `src/db/schema.ts` |
 | `npm run db:migrate` | Aplica as migrações |
+| `npm run db:seed` | Cria ou atualiza o elenco inicial |
 
 ## Estrutura
 

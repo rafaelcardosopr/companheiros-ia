@@ -1,0 +1,1 @@
+ALTER TABLE "characters" ADD COLUMN "archetype" text DEFAULT '' NOT NULL;
